@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 450px;
+            margin: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        input, select, textarea {
+            border: 2px solid black;
+            width: 250px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            width: 20px;
+            height: 15px;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+        input[type="color"] {
+            width: 50px;
+            height: 30px;
+            padding: 0;
+            border: none;
+        }
+        button {
+            padding: 7px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form style="width: 900px;">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br>
+
+            <label>Giới tính:</label>
+            <input type="radio" id="male" name="gender" value="Nam">
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="gender" value="Nữ">
+            <label for="female">Nữ</label>
+            <br>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="comName">Tên công ty:</label>
+            <input type="text" id="comName" name="comName" required>
+            <br>
+
+            <label for="role">Vai trò trong cty</label>
+            <select id="role" name="role">
+                <option value="gd">CEO</option>
+                <option value="nhomtruong">Nhóm Trưởng</option>
+                <option value="nhompho">Nhóm Phó</option>
+            </select>
+            <br>
+
+            <label for="scale">Quy mô cty</label>
+            <select id="scale" name="scale">
+                <option value="dnn">Doanh nghiệp nhỏ</option>
+                <option value="dnl">Doanh nghiệp lớn</option>
+                <option value="td">Tập đoàn</option>
+            </select>
+            <br>
+
+            <label for="comJob">Ngành nghề công ty:</label>
+            <input type="text" id="comJob" name="comJob" required>
+            <br>
+
+            <label>Lý do tham gia clb:</label>
+            <textarea id="reason" name="reason"></textarea>
+            <br>
+
+            <label>Kinh nghiệm lãnh đạo:</label>
+            <textarea id="exp" name="exp"></textarea>
+            <br>
+
+            <label>Mục tiêu tham gia clb:</label>
+            <textarea id="target" name="target"></textarea>
+            <br>
+
+            <label>Chương trình sự kiện mong muốn tham gia:</label>
+            <input type="checkbox" id="nwk" name="nwk">
+            <label for="nwk">Networking</label>
+            <input type="checkbox" id="ws" name="ws">
+            <label for="ws">Workshops</label>
+            <input type="checkbox" id="ht" name="ht">
+            <label for="ht">Hội Thảo</label>
+            <br>
+
+            <label for="regis">Đăng ký nhận bản tin:</label>
+            <input type="checkbox" id="yes" name="yes">
+            <label for="co">Có</label>
+            <br>
+
+            <button type="submit">Đăng ký hội viên</button>
+        </form>
+    </div>
+
+</body>
+</html>

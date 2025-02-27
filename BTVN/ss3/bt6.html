@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT6</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
+        .container{
+            margin: 20px;
+        }
+        input,select,textarea{
+            font-size: 16px;
+            padding: 5px;
+            width: 300px;
+            border: 2px solid black;;
+        }
+        textarea{
+            height:100px;
+        }
+        button{
+            padding: 5px 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="product">Chọn sản phẩm:</label>
+        <select name="product" id="product">
+            <option value="san-pham-1">Sản phẩm 1</option>
+            <option value="san-pham-2">Sản phẩm 2</option>
+            <option value="san-pham-3">Sản phẩm 3</option>
+        </select>
+        <br><br>
+        <label for="quantity">Số Lượng:</label>
+        <input type="text" id="quantity" name="quantity" required>
+        <br><br>
+        <label for="address">Địa chỉ giao hàng:</label>
+        <textarea name="address" id="address"></textarea>
+        <br><br>
+        <button type="submit">Đặt hàng</button>
+    </div>
+</body>
+</html>

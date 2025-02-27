@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="email">Email của bạn:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label>Chọn loại thông báo:</label>
+            <input type="checkbox" id="news" name="notification" value="news" checked>
+            <label for="news">Tin tức mới</label>
+
+            <input type="checkbox" id="promo" name="notification" value="promo">
+            <label for="promo">Khuyến mãi</label>
+            <br><br>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+</body>
+</html>

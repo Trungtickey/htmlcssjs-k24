@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 500px;
+            margin: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            border: 2px solid black;
+            width: 250px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            width: auto;
+        }
+        button {
+            padding: 7px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br>
+
+            <label>Giới tính:</label>
+            <input type="radio" id="male" name="gender" value="Nam">
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="gender" value="Nữ">
+            <label for="female">Nữ</label>
+            <br>
+
+            <label for="idNumber">Số căn cước công dân:</label>
+            <input type="number" id="idNumber" name="idNumber" required>
+            <br>
+
+            <label for="doh">Ngày cấp:</label>
+            <input type="date" id="doh" name="doh" required>
+            <br>
+
+            <label for="loca">Nơi cấp:</label>
+            <input type="text" id="loca" name="loca" required>
+            <br>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="address-main">Địa chỉ thường trú:</label>
+            <textarea id="address-main" name="address-main"></textarea>
+            <br>
+
+            <label for="address">Địa chỉ tạm trú:</label>
+            <textarea id="address" name="address"></textarea>
+            <br>
+
+            <label>Loại căn cước công dân:</label>
+            <input type="radio" id="new" name="id" value="new">
+            <label for="id">Căn cước công dân mới</label>
+            <input type="radio" id="old" name="id" value="old">
+            <label for="id">Căn cước công dân cũ</label>
+            <br>
+
+            <label for="nation">Dân tộc:</label>
+            <input type="text" id="nation" name="nation" required>
+            <br>
+
+            <label for="religion">Tôn giáo:</label>
+            <input type="text" id="religion" name="religion" required>
+            <br>
+
+            <label for="nationality">Quốc Tịch:</label>
+            <input type="text" id="nationality" name="nationality" value="Việt Nam" readonly>
+            <br>
+
+            <label for="parentsName">Họ tên cha/mẹ:</label>
+            <input type="text" id="parentsName" name="parentsName" required>
+            <br>
+
+            <label for="idNumberP">Số căn CMND/CCCD của cha/mẹ:</label>
+            <input type="number" id="idNumberP" name="idNumberP" required>
+            <br>
+
+            <label for="city">Tỉnh/Thành Phố</label>
+            <select id="city" name="city" value="Chọn Tỉnh/Thành Phố">
+                <option value="tphcm">TPHCM</option>
+                <option value="hn">Hà Nội</option>
+                <option value="vinh">Vinh</option>
+            </select>
+            <br>
+
+            <button type="submit">Gửi thông tin</button>
+        </form>
+    </div>
+
+</body>
+</html>
