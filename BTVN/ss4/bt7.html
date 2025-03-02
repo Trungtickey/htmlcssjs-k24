@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt7</title>
+    <style>
+        input,select{
+            border:1px solid black;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Tìm kiếm sản phẩm</h1>
+        <form>
+            <p>Từ khóa tìm kiếm:</p>
+            <input type="text" id="research" name="research" required><br>
+
+            <p>Loại sản phẩm:</p>
+            <select name="product" id="product">
+                <option value="dien-tu">Điện tử</option>
+                <option value="gia-dung">Gia dụng</option>
+                <option value="quan-ao">Quần áo</option>
+            </select><br><br>
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+</body>
+</html>
