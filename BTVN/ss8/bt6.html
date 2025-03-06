@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #303030;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 0 12px;
+            width: 600px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .search-bar .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin: 0 8px;
+        }
+
+        .search-bar .left-icon {
+            opacity: 0.6;
+        }
+
+        .search-bar .right-icons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-bar">
+    <img class="icon left-icon" src="https://www.google.com/images/icons/material/system/2x/search_grey600_24dp.png" alt="Search">
+    <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+    <div class="right-icons">
+        <img class="icon" src="https://i.pinimg.com/736x/ea/5f/5b/ea5f5bd3b4110f2afb958049b4096d3a.jpg" alt="Micro">
+        <img class="icon" src="https://i.pinimg.com/736x/ab/4f/65/ab4f65365c5de2376f2c147c5e563f5c.jpg" alt="Google Lens">
+    </div>
+</div>
+
+</body>
+</html>
