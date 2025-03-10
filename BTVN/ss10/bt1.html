@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt1</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e5e5e5;
+            padding: 15px 50px;
+        }
+
+        .logo h3{
+            font-family: "Mea Culpa", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .nav-links{
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a{
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover{
+            font-weight: bold;
+            color: rgb(27, 22, 22);
+        }
+
+        .search-button{
+            display: flex;
+            align-items: center;
+            background-color: #999;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"><h3>Sport News</h3></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Category</a>
+            <a href="#">Trending News</a>
+            <a href="#">Recent News</a>
+            <a href="#">Clubs Ranking</a>
+            <a href="#">Sports Article</a>
+        </div>
+        <button class="search-button"><i class="fa fa-search" style="padding: 10px;"></i>Search</button>
+    </div>
+</body>
+</html>

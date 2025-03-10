@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            justify-items: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .header {
+            background-color: #3498db;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .sidebar {
+            background-color: #2ecc71;
+            width: 25%;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #e74c3c;
+            width: 75%;
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #9b59b6;
+            padding: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        Header
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            Sidebar
+        </aside>
+        <main class="content">
+            Content
+        </main>
+    </div>
+
+    <footer class="footer">
+        Footer
+    </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Element with Flexbox</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 500px;
+            width: 500px;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .centered-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="centered-box">Centered</div>
+    </div>
+</body>
+</html>
