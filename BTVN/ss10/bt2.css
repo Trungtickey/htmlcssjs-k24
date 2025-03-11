@@ -5,83 +5,118 @@
     font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+    background-color: #fff;
     padding: 20px;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 15px;
     color: #333;
+    font-weight: normal;
 }
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto auto;
-    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 80px);
+    gap: 15px;
 }
 
 .category-item {
-    position: relative;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.category-item:hover {
-    transform: scale(1.02);
-}
-
-.football {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.basketball-title {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-.basketball-img {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.car-sport {
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
-}
-
-.table-tennis {
-    grid-column: 4 / 5;
-    grid-row: 1 / 3;
 }
 
 .category-title {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #f2f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    width: 100%;
 }
 
 .category-title h2 {
     color: #666;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
+    text-align: center;
 }
 
 .category-image {
-    position: relative;
+    width: 100%;
     height: 100%;
-    min-height: 250px;
 }
 
 .category-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+}
+
+.football-title {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+}
+
+.football-img {
+    grid-column: 1 / 5;
+    grid-row: 3 / 7;
+}
+
+.basketball-img {
+    grid-column: 5 / 9;
+    grid-row: 1 / 4;
+}
+
+.basketball-title {
+    grid-column: 5 / 9;
+    grid-row: 4 / 7;
+}
+
+.car-sport-title {
+    grid-column: 9 / 13;
+    grid-row: 1 / 3;
+}
+
+.car-sport-img {
+    grid-column: 9 / 13;
+    grid-row: 3 / 5;
+}
+
+.table-tennis-img {
+    grid-column: 13 / 17;
+    grid-row: 1 / 5;
+}
+
+.table-tennis-title {
+    grid-column: 13 / 17;
+    grid-row: 5 / 7;
+}
+
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .football-title,
+    .football-img,
+    .basketball-img,
+    .basketball-title,
+    .car-sport-title,
+    .car-sport-img,
+    .table-tennis-img,
+    .table-tennis-title {
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
