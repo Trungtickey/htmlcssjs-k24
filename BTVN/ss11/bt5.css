@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.header, .nav, .main, .aside, .column {
+    background-color: #8b4543;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+}
+
+.columns-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.column {
+    flex: 1;
+    min-height: 100px;
+}
+
+/* Desktop Layout (≥1200px) */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main {
+        flex: 2;
+        margin-bottom: 0;
+    }
+
+    .aside {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .column {
+        flex: 1 1 calc(33.333% - 10px);
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Tablet Layout (768px → 1200px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .column {
+        flex: 1 1 calc(50% - 7.5px);
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .column {
+        flex: 1 1 100%;
+    }
+
+    .main, .aside {
+        margin-bottom: 15px;
+    }
+}
+
+/* Utility */
+.hamburger {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger::before {
+    content: "☰";
+}

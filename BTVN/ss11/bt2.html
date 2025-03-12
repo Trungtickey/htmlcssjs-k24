@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .box {
+            min-height: 80px;
+            border-radius: 4px;
+        }
+
+        .turquoise-bar {
+            background-color: #7fbbbb;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .row-two .box {
+            flex: 1;
+            height: 100px;
+        }
+
+        .coral-box {
+            background-color: #ff7f7f;
+        }
+
+        .orange-box {
+            background-color: #ffa500;
+        }
+
+        .row-three .box {
+            flex: 1;
+            height: 100px;
+        }
+
+        .navy-box {
+            background-color: #1a365d;
+        }
+
+        @media (max-width: 1024px) {
+            .row-two {
+                flex-direction: column;
+            }
+
+            .row-three .coral-box,
+            .row-three .orange-box {
+                display: none;
+            }
+
+            .row-three {
+                display: block;
+            }
+
+            .box {
+                min-height: 100px;
+            }
+
+            .row-two .box {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top bar -->
+        <div class="box turquoise-bar"></div>
+
+        <!-- Two equal boxes -->
+        <div class="row row-two">
+            <div class="box coral-box"></div>
+            <div class="box orange-box"></div>
+        </div>
+
+        <!-- Middle bar -->
+        <div class="box turquoise-bar"></div>
+
+        <!-- Three equal boxes -->
+        <div class="row row-three">
+            <div class="box navy-box"></div>
+            <div class="box coral-box"></div>
+            <div class="box orange-box"></div>
+        </div>
+    </div>
+</body>
+</html>

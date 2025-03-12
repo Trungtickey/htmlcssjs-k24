@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.orange-box {
+    background-color: #ffa500;
+    min-height: 60px;
+}
+
+.yellow-box {
+    background-color: #ccff00;
+    min-height: 150px;
+}
+
+.blue-box {
+    background-color: #4169e1;
+    min-height: 80px;
+}
+
+.gray-box {
+    background-color: #dcdcdc;
+    min-height: 60px;
+}
+
+/* Desktop Layout (≥1200px) */
+@media (min-width: 1200px) {
+    .orange-section {
+        display: flex;
+        gap: 15px;
+    }
+
+    .orange-box {
+        flex: 1;
+    }
+
+    .blue-section {
+        display: flex;
+        gap: 15px;
+    }
+
+    .blue-box {
+        flex: 1;
+    }
+
+    .gray-section {
+        display: flex;
+        gap: 15px;
+    }
+
+    .gray-box {
+        flex: 1;
+    }
+}
+
+/* Tablet Layout (768px → 1200px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .orange-section {
+        flex-direction: column;
+    }
+
+    .blue-section {
+        flex-direction: column;
+    }
+
+    .gray-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .gray-box {
+        flex: 1 1 calc(50% - 7.5px);
+    }
+}
+
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+    .orange-section,
+    .blue-section,
+    .gray-section {
+        flex-direction: column;
+    }
+
+    .orange-box,
+    .blue-box,
+    .gray-box {
+        width: 100%;
+    }
+}

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.browser-frame {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.browser-header {
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.header {
+    background-color: #b3d9ff;
+    padding: 40px;
+    text-align: center;
+}
+
+.content {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.signup {
+    background-color: #b3d9ff;
+    padding: 40px;
+    text-align: center;
+}
+
+.feature {
+    padding: 40px;
+    text-align: center;
+}
+
+.feature-yellow {
+    background-color: #ffd700;
+}
+
+.feature-pink {
+    background-color: #ffb6c1;
+}
+
+.feature-purple {
+    background-color: #e6e6fa;
+}
+
+/* Desktop Layout (≥1200px) */
+@media (min-width: 1200px) {
+    .layout-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features-row {
+        display: flex;
+    }
+
+    .feature {
+        flex: 1;
+    }
+
+    .content {
+        order: 1;
+    }
+}
+
+/* Tablet Layout (768px → 1200px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .layout-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .section {
+        min-height: 120px;
+    }
+
+    .header, .content {
+        width: 100%;
+    }
+}
+
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+     .layout-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section {
+        width: 100%;
+    }
+}
