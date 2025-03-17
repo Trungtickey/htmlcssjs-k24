@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt9</title>
+</head>
+<body>
+    <h1>Chuyển đổi độ C sang độ F</h1>
+    <label for="celsius">Độ C:</label>
+    <input type="number" id="celsius" name="celsius"><br><br>
+    <button onclick="convertToFahrenheit()">Chuyển đổi</button>
+    <p id="result"></p>
+
+    <script>
+        function convertToFahrenheit() {
+            var celsius = parseFloat(document.getElementById("celsius").value);
+            var fahrenheit = (celsius * 9/5) + 32;  // Chuyển đổi sang độ F
+            document.getElementById("result").innerHTML = "Độ F: " + fahrenheit.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt7</title>
+</head>
+<body>
+    <h1>Tính điểm trung bình 3 môn học</h1>
+    <label for="math">Điểm Toán:</label>
+    <input type="number" id="math" name="math"><br><br>
+    <label for="physics">Điểm Vật lý:</label>
+    <input type="number" id="physics" name="physics"><br><br>
+    <label for="chemistry">Điểm Hóa học:</label>
+    <input type="number" id="chemistry" name="chemistry"><br><br>
+    <button onclick="calculateAverage()">Tính điểm trung bình</button>
+    <p id="result"></p>
+    <script>
+        function calculateAverage() {
+            // Khai báo các biến điểm
+            var math = parseFloat(document.getElementById("math").value);
+            var physics = parseFloat(document.getElementById("physics").value);
+            var chemistry = parseFloat(document.getElementById("chemistry").value);
+            var average = (math + physics + chemistry) / 3;
+            document.getElementById("result").innerHTML = "Điểm trung bình: " + average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
