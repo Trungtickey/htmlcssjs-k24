@@ -1,5 +1,5 @@
-var number = 10;        // Số nguyên
-var price = 20.5;       // Số thực
+let number = 10;        // Số nguyên
+let price = 20.5;       // Số thực
 var status = true;      // Kiểu logic (boolean)
 var city = "Hà Nội";    // Chuỗi
 

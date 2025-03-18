@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt9-Giải phương trình bậc 2</title>
+</head>
+<body>
+
+    <h2>Giải phương trình bậc 2: ax² + bx + c = 0</h2>
+
+    <label for="a">Nhập a:</label>
+    <input type="number" id="a">
+    <br><br>
+
+    <label for="b">Nhập b:</label>
+    <input type="number" id="b">
+    <br><br>
+
+    <label for="c">Nhập c:</label>
+    <input type="number" id="c">
+    <br><br>
+
+    <button onclick="solveQuadratic()">Tính nghiệm</button>
+
+    <p id="result"></p>
+
+    <script>
+        function solveQuadratic() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            if (a === 0) {
+                document.getElementById("result").innerHTML = "Đây không phải là phương trình bậc 2.";
+                return;
+            }
+            let delta = Math.pow(b, 2) - 4 * a * c;
+            let resultText = `Δ = ${delta} <br>`;
+
+            if (delta > 0) {
+                // Có 2 nghiệm phân biệt
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                resultText += `Phương trình có 2 nghiệm phân biệt:<br>x₁ = ${x1.toFixed(2)} <br>x₂ = ${x2.toFixed(2)}`;
+            } else if (delta === 0) {
+                // Có nghiệm kép
+                let x = -b / (2 * a);
+                resultText += `Phương trình có nghiệm kép: x = ${x.toFixed(2)}`;
+            } else {
+                // Vô nghiệm
+                resultText += "Phương trình vô nghiệm.";
+            }
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt12-Chuyển đổi số sang nhị phân</title>
+</head>
+<body>
+
+    <h2>Chuyển đổi số sang hệ nhị phân</h2>
+
+    <label for="number">Nhập số:</label>
+    <input type="number" id="number">
+    <br><br>
+
+    <button onclick="convertToBinary()">Chuyển đổi</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertToBinary() {
+            let num = parseInt(document.getElementById("number").value);
+            let binary = num.toString(2); // Chuyển số sang nhị phân
+
+            document.getElementById("result").innerHTML = `Số ${num} trong hệ nhị phân là: ${binary}`;
+        }
+    </script>
+</body>
+</html>

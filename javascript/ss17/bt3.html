@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt3-Viết hoa tất cả các chữ cái</title>
+</head>
+<body>
+    <h1>Mời nhập tên:</h1>
+    <label for="name">Nhập tên: </label>
+    <input type="text" id="fullName" placeholder="Họ và Tên">
+    <button onclick="showUpperCaseName()">Tên được viết hoa</button>
+    <p id="result"></p>
+
+    <script>
+        function showUpperCaseName(){
+            var fullName = document.getElementById("fullName").value;
+            if(fullName === ""){
+                alert("Vui lòng nhập tên đủ!");
+                return;
+            }
+
+            var upperCaseName = fullName.toUpperCase();
+            document.getElementById("result").innerHTML = "Tên viết hoa:" + upperCaseName;
+        }
+    </script>
+</body>
+</html>

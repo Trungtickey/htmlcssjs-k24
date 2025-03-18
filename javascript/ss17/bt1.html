@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt1</title>
+</head>
+<body>
+    <h1>Nhập thông tin cá nhân</h1>
+    <label for="name">Tên của bạn là: </label>
+    <input type="text" id="name" placeholder="Nhập tên của bạn">
+
+    <label for="age">Nhập tuổi của bạn: </label>
+    <input type="number" id="age" placeholder="Nhập tuổi của bạn">
+
+    <button onclick="showInfo()">Hiện thị thông tin</button>
+
+    <script>
+        function showInfo(){
+            var name = document.getElementById("name").value;
+            var age = documment.getElementById("age").value;
+
+            if(name === "" || age === ""){
+                alert("Vui lòng nhập đầy đủ tên và tuổi");
+                return;
+            }
+            console.log("Tên của bạn là: " + name);
+            console.log("Tuổi của bạn là: " + age);
+
+            alert("Thông tin của bạn đã được nhận thành công");
+        } 
+    </script>
+</body>
+</html>

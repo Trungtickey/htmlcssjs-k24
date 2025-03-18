@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tiền lãi ngân hàng</title>
+</head>
+<body>
+
+    <h2>Tính tiền lãi khi gửi ngân hàng</h2>
+
+    <label for="amount">Nhập số tiền gửi (VNĐ):</label>
+    <input type="number" id="amount" min="0">
+    <br><br>
+
+    <label for="months">Nhập số tháng gửi:</label>
+    <input type="number" id="months" min="1">
+    <br><br>
+
+    <button onclick="calculateInterest()">Tính lãi</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateInterest() {
+            let amount = parseFloat(document.getElementById("amount").value); 
+            let months = parseInt(document.getElementById("months").value); 
+            let interestRate = 4.3 / 100; // Lãi suất 4.3%/năm
+
+            if (isNaN(amount) || isNaN(months) || amount <= 0 || months <= 0) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số tiền và số tháng hợp lệ!";
+                return;
+            }
+            // Tính tiền lãi
+            let interest = (amount * interestRate * months) / 12;
+            let totalAmount = amount + interest;
+
+            document.getElementById("result").innerHTML = `Số tiền lãi sau ${months} tháng: <strong>${interest.toLocaleString()} VNĐ</strong><br>
+            Tổng số tiền nhận được: <strong>${totalAmount.toLocaleString()} VNĐ</strong>`;
+        }
+    </script>
+</body>
+</html>

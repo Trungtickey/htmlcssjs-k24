@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt4-Tính căn bậc 2</title>
+</head>
+<body>
+
+    <h2>Nhập một số để tính căn bậc 2:</h2>
+    <input type="number" id="numberInput" placeholder="Nhập số">
+    <button onclick="calculateSquareRoot()">Tính căn bậc 2</button>
+
+    <p id="result"></p> 
+
+    <script>
+        function calculateSquareRoot() {
+            var number = document.getElementById("numberInput").value;
+            if (number === "") {
+                alert("Vui lòng nhập một số!");
+                return;
+            }
+            number = parseFloat(number);
+            if (number < 0) {
+                alert("Không thể tính căn bậc 2 của số âm!");
+                return;
+            }
+            var sqrtResult = Math.sqrt(number);
+            document.getElementById("result").innerHTML = `Căn bậc 2 của ${number} là: ${sqrtResult}`;
+        }
+    </script>
+</body>
+</html>

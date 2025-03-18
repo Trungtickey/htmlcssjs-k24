@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt8-Tính số ngày chênh lệch</title>
+</head>
+<body>
+
+    <h2>Nhập hai ngày để tính số ngày chênh lệch</h2>
+
+    <label for="date1">Ngày thứ nhất:</label>
+    <input type="date" id="date1">
+    <br><br>
+
+    <label for="date2">Ngày thứ hai:</label>
+    <input type="date" id="date2">
+    <br><br>
+
+    <button onclick="calculateDifference()">Tính số ngày</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateDifference() {
+            let date1 = document.getElementById("date1").value;
+            let date2 = document.getElementById("date2").value;
+            if (!date1 || !date2) {
+                alert("Vui lòng nhập đủ cả hai ngày!");
+                return;
+            }
+            // Chuyển đổi chuỗi thành đối tượng Date
+            let d1 = new Date(date1);
+            let d2 = new Date(date2);
+
+            let diffTime = Math.abs(d2 - d1); // Tính số ngày chênh lệch (chuyển sang mili-giây)
+            let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Chuyển đổi mili-giây thành ngày
+            document.getElementById("result").innerHTML = `Độ lệch là ${diffDays} ngày`;
+        }
+    </script>
+</body>
+</html>

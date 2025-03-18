@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt7-Chuyển đổi số sang VNĐ</title>
+</head>
+<body>
+
+    <h2>Nhập vào số tiền (VNĐ):</h2>
+
+    <input type="number" id="amount" placeholder="Nhập số tiền">
+    <br><br>
+    <button onclick="convertToVND()">Chuyển đổi</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertToVND() {
+            let amount = document.getElementById("amount").value;
+            if (amount.trim() === "" || isNaN(amount)) {
+                alert("Vui lòng nhập một số hợp lệ!");
+                return;
+            }
+            let formattedAmount = Number(amount).toLocaleString("vi-VN") + " VNĐ";
+            document.getElementById("result").innerHTML = `Số tiền: ${formattedAmount}`;
+        }
+    </script>
+</body>
+</html>

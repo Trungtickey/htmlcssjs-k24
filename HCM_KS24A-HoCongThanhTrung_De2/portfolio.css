@@ -703,7 +703,7 @@ body.dark-theme .tag:hover {
 
 /* footer */
 
-.footer {
+footer {
     display: flex;
     margin-top: auto;
     padding: 24px 20px;

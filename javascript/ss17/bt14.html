@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt14-Tính toán hình trụ</title>
+</head>
+<body>
+    <h2>Chương trình tính toán hình trụ</h2>
+
+    <label for="radius">Nhập bán kính đáy (r):</label>
+    <input type="number" id="radius" min="0">
+    <br><br>
+
+    <label for="height">Nhập chiều cao (h):</label>
+    <input type="number" id="height" min="0">
+    <br><br>
+
+    <button onclick="calculateCylinder()">Tính toán</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateCylinder(){
+            let r = parseFloat(document.getElementById("radius").value); 
+            let h = parseFloat(document.getElementById("height").value);
+            const PI = Math.PI;
+
+            if (isNaN(r) || isNaN(h) || r <= 0 || h <= 0) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập bán kính và chiều cao hợp lệ!";
+                return;
+            }
+            let chuViDay = 2 * PI * r; // Chu vi đáy: C = 2πr
+            let dienTichXungQuanh = 2 * PI * r * h; // Diện tích xung quanh: Sxq = 2πrh
+            let dienTichToanPhan = dienTichXungQuanh + 2 * (PI * r * r); // Diện tích toàn phần: Stp = Sxq + 2πr^2
+            let theTich = PI * r * r * h; // Thể tích: V = πr^2h
+
+            document.getElementById("result").innerHTML = `
+                <strong>Kết quả:</strong><br>
+                Chu vi đáy: <strong>${chuViDay.toFixed(2)}</strong><br>
+                Diện tích xung quanh: <strong>${dienTichXungQuanh.toFixed(2)}</strong><br>
+                Diện tích toàn phần: <strong>${dienTichToanPhan.toFixed(2)}</strong><br>
+                Thể tích hình trụ: <strong>${theTich.toFixed(2)}</strong>
+            `;
+        }
+    </script>
+
+</body>
+</html>
