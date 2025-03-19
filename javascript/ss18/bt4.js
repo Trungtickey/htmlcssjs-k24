@@ -1,5 +1,7 @@
 let num = prompt("Nhập 1 số:");
 
+num = parseInt(num);
+
 switch(num){
     case 1:
         alert("Một");
@@ -27,5 +29,8 @@ switch(num){
         break;
     case 9:
         alert("Chín");
+        break;
+    default:
+        alert("Số bạn nhập không hợp lệ!");
         break;
 }
