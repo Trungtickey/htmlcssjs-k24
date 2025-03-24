@@ -7,10 +7,7 @@ while (isNaN(a) || isNaN(b) || b < 0) {
     b = parseInt(prompt("Nhập vào số B:"));
 }
 
-// Khởi tạo kết quả với giá trị ban đầu là 1
 let result = 1;
-
-// Sử dụng vòng lặp for để tính lũy thừa
 for (let i = 0; i < b; i++) {
     result *= a;
 }
