@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [2, 5, 7, 4, 1, 8, 6, 2, 5, 7];
+        let frequency = {};
+        numbers.forEach(num =>{frequency[num] = (frequency[num] || 0) + 1});
+
+        let maxCount = Math.max(...Object.values(frequency));
+        // Lọc ra các phần tử có số lần xuất hiện lớn nhất
+        let maxNumbers = Object.keys(frequency).filter(num => frequency[num] === maxCount).map(Number);
+        let result = Math.min(...maxNumbers);
+
+        console.log(`Phần tử xuất hiện nhiều nhất là: ${result} (xuất hiện ${maxCount} lần)`);
+    </script>
+</body>
+</html>

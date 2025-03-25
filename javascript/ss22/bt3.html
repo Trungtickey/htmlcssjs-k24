@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt3</title>
+</head>
+<body>
+    <script>
+        let userInput = prompt("Nhập vào một dãy số:");
+        if (!/^\d+$/.test(userInput)) { 
+           console.log("Dãy không hợp lệ");
+        } else {
+           let reversedString = userInput.split("").reverse().join(""); 
+           console.log(reversedString);
+        }
+    </script>
+</body>
+</html>
