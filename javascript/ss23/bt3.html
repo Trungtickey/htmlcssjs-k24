@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>bt3</title>
 </head>
 <body>
-    
+    <script>
+        let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+        if (n < 0) {
+            console.log("Số lượng phần tử không hợp lệ");
+        } else if (n === 0) {
+            console.log("Mảng không có phần tử");
+        } else {
+            let array = [];
+            
+            // Nhập các phần tử vào mảng
+            for (let i = 0; i < n; i++) {
+                let num = parseFloat(prompt(`Nhập phần tử thứ ${i + 1}:`));
+                array.push(num);
+            }
+            // Đếm số nguyên âm trong mảng
+            let negativeCount = array.filter(num => Number.isInteger(num) && num < 0).length;
+            console.log(`Số lượng số nguyên âm trong mảng: ${negativeCount}`);
+        }
+    </script>
 </body>
 </html>

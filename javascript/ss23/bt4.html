@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt4</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập số phần tử của mảng:"));
+        if (n === 0) {
+           console.log("Không có ký tự số");
+        } else if (n < 0) {
+           console.log("Số lượng phần tử không hợp lệ");
+        } else {
+        let array = [];
+        for (let i = 0; i < n; i++) {
+        let char = prompt(`Nhập ký tự thứ ${i + 1}:`);
+            array.push(char);
+        }
+
+         // Lọc ra các ký tự số trong mảng
+        let digitChars = array.filter(char => !isNaN(char) && char.trim() !== "");
+
+        if (digitChars.length > 0) {
+           console.log(digitChars.join(" "));
+        } else {
+           console.log("Không có ký tự số");
+        }
+    }
+
+    </script>
+</body>
+</html>

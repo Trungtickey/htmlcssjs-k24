@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt8</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+        if(n < 0){
+            console.log("Số lượng phần tử không được nhỏ hơn 0");
+        } else if(n === 0){
+            console.log("Không phải dãy số fibonacci");
+        } else {
+            let arr = prompt("Nhập các phần tử của mảng(cách nahu bởi dấu cách):").split(" ").map(Number);
+
+            if(arr.length !== n){
+                console.log("Số lượng phần tử nhập vào không khớp!");
+            } else {
+                let isFibonacci = true;
+                if(n < 3){
+                    isFibonacci = false;
+                } else {
+                    for(let i = 2; i < n; i++){
+                        if(arr[i] !== arr[i - 1] +  arr[i - 2]){
+                            isFibonacci = false;
+                            break;
+                        }
+                    }
+                }
+                if(isFibonacci){
+                    console.log("Là dãy số fibonacci");
+                } else {
+                    console.log("Không phải dãy số fibonacci");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

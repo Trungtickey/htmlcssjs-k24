@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt7</title>
+</head>
+<body>
+    <script>
+        function secondLargest(arr) {
+            if (arr.length < 2) {
+                return "Không có số lớn thứ hai";
+            }
+        
+            // Loại bỏ phần tử trùng nhau và sắp xếp giảm dần
+            let uniqueSorted = [...new Set(arr)].sort((a, b) => b - a);
+            if (uniqueSorted.length < 2) {
+                return "Không có số lớn thứ hai";
+            }
+        
+            return uniqueSorted[1]; // Lấy phần tử lớn thứ hai
+        }
+        
+        // Nhập số lượng phần tử
+        let n = parseInt(prompt("Nhập số phần tử của mảng:"));
+        
+        if (n < 0) {
+            console.log("Số lượng phần tử không được nhỏ hơn 0");
+        } else if (n === 0) {
+            console.log("Mảng không có phần tử nào");
+        } else {
+            // Nhập mảng từ người dùng
+            let arr = prompt("Nhập các phần tử của mảng (cách nhau bởi dấu cách):")
+                .split(" ")
+                .map(Number);
+        
+            if (arr.length !== n) {
+                console.log("Số lượng phần tử nhập vào không khớp!");
+            } else {
+                console.log("Số lớn thứ hai trong mảng là:", secondLargest(arr));
+            }
+        }
+        
+    </script>
+</body>
+</html>
