@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt2</title>
+</head>
+<body>
+
+    <input type="text" id="inputArray" placeholder="Nhập số nguyên, cách nhau bởi dấu phẩy">
+    <button onclick="nhapMang()">Nhập Mảng</button>
+
+    <p><strong>Mảng hiện tại:</strong> <span id="mang"></span></p>
+
+    <button onclick="hienThiMang()">Hiển thị Mảng</button>
+    <button onclick="timChanLe()">Tìm số chẵn và lẻ</button>
+    <button onclick="tinhTrungBinh()">Tính trung bình cộng</button>
+    <button onclick="xoaPhanTu()">Xóa phần tử theo vị trí</button>
+    <button onclick="timSoLonThuHai()">Tìm số lớn thứ hai</button>
+    <button onclick="thoat()">Thoát</button>
+
+    <p><strong>Kết quả:</strong></p>
+    <p id="ketQua"></p>
+
+    <script>
+        let arr = [];
+
+        function nhapMang() {
+            let input = document.getElementById("inputArray").value;
+            arr = input.split(",").map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+            document.getElementById("mang").innerText = arr.join(", ");
+            document.getElementById("ketQua").innerText = "Mảng đã được nhập!";
+        }
+
+        function hienThiMang() {
+            if (arr.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+            } else {
+                document.getElementById("ketQua").innerText = "Mảng hiện tại: " + arr.join(", ");
+            }
+        }
+
+        function timChanLe() {
+            if (arr.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let chan = [], le = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) chan.push(arr[i]);
+                else le.push(arr[i]);
+            }
+            document.getElementById("ketQua").innerText = `Số chẵn: ${chan.join(", ")} | Số lẻ: ${le.join(", ")}`;
+        }
+
+        function tinhTrungBinh() {
+            if (arr.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) sum += arr[i];
+            let avg = sum / arr.length;
+            document.getElementById("ketQua").innerText = "Trung bình cộng: " + avg.toFixed(2);
+        }
+
+        function xoaPhanTu() {
+            if (arr.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let index = parseInt(prompt("Nhập vị trí cần xóa (0 đến " + (arr.length - 1) + "):"));
+            if (index >= 0 && index < arr.length) {
+                arr.splice(index, 1);
+                document.getElementById("mang").innerText = arr.join(", ");
+                document.getElementById("ketQua").innerText = "Mảng sau khi xóa: " + arr.join(", ");
+            } else {
+                document.getElementById("ketQua").innerText = "Vị trí không hợp lệ!";
+            }
+        }
+
+        function timSoLonThuHai() {
+            if (arr.length < 2) {
+                document.getElementById("ketQua").innerText = "Mảng không đủ phần tử!";
+                return;
+            }
+            let max = Math.max(...arr);
+            let secondMax = -Infinity;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < max && arr[i] > secondMax) secondMax = arr[i];
+            }
+            document.getElementById("ketQua").innerText = "Phần tử lớn thứ hai: " + secondMax;
+        }
+
+        function thoat() {
+            document.getElementById("ketQua").innerText = "Chương trình đã kết thúc.";
+            alert("Chương trình đã kết thúc.");
+        }
+    </script>
+
+</body>
+</html>

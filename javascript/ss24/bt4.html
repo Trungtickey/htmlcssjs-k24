@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Mảng 2 Chiều</title>
+</head>
+<body>
+    <label>Nhập số hàng: <input type="number" id="rows" min="1"></label>
+    <label>Nhập số cột: <input type="number" id="cols" min="1"></label>
+    <button id="btnNhap">Nhập Mảng</button>
+
+    <div id="inputMatrix"></div>
+
+    <p><strong>Mảng hiện tại:</strong></p>
+    <div id="matrixDisplay"></div>
+
+    <button id="btnHienThi">Hiển thị Mảng</button>
+    <button id="btnTong">Tính Tổng</button>
+    <button id="btnTimMax">Tìm phần tử lớn nhất</button>
+    <label>Nhập hàng cần tính TBC: <input type="number" id="rowIndex" min="0"></label>
+    <button id="btnTrungBinh">Tính TBC hàng</button>
+    <button id="btnDaoNguoc">Đảo ngược hàng</button>
+    <button id="btnThoat">Thoát</button>
+
+    <p><strong>Kết quả:</strong></p>
+    <p id="ketQua"></p>
+
+    <script>
+        let matrix = [];
+        let rowCount = 0, colCount = 0;
+
+        document.getElementById("btnNhap").onclick = function() {
+            rowCount = parseInt(document.getElementById("rows").value);
+            colCount = parseInt(document.getElementById("cols").value);
+            matrix = [];
+
+            if (rowCount > 0 && colCount > 0) {
+                let inputHTML = "<p>Nhập giá trị cho mảng:</p>";
+                let i = 0;
+                while (i < rowCount) {
+                    matrix[i] = [];
+                    let j = 0;
+                    while (j < colCount) {
+                        inputHTML += `<input type="number" id="cell-${i}-${j}" style="width: 50px;"> `;
+                        j++;
+                    }
+                    inputHTML += "<br>";
+                    i++;
+                }
+                inputHTML += '<button id="btnLuu">Lưu Mảng</button>';
+                document.getElementById("inputMatrix").innerHTML = inputHTML;
+
+                document.getElementById("btnLuu").onclick = function() {
+                    let i = 0;
+                    while (i < rowCount) {
+                        let j = 0;
+                        while (j < colCount) {
+                            let value = parseInt(document.getElementById(`cell-${i}-${j}`).value);
+                            matrix[i][j] = isNaN(value) ? 0 : value;
+                            j++;
+                        }
+                        i++;
+                    }
+                    document.getElementById("ketQua").innerText = "Mảng đã được nhập!";
+                };
+            } else {
+                document.getElementById("ketQua").innerText = "Vui lòng nhập số hàng và cột hợp lệ!";
+            }
+        };
+
+        document.getElementById("btnHienThi").onclick = function() {
+            if (matrix.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let tableHTML = "<table>";
+            let i = 0;
+            while (i < matrix.length) {
+                tableHTML += "<tr>";
+                let j = 0;
+                while (j < matrix[i].length) {
+                    tableHTML += `<td>${matrix[i][j]}</td>`;
+                    j++;
+                }
+                tableHTML += "</tr>";
+                i++;
+            }
+            tableHTML += "</table>";
+            document.getElementById("matrixDisplay").innerHTML = tableHTML;
+        };
+
+        document.getElementById("btnTong").onclick = function() {
+            if (matrix.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let sum = 0;
+            let i = 0;
+            while (i < matrix.length) {
+                let j = 0;
+                while (j < matrix[i].length) {
+                    sum += matrix[i][j];
+                    j++;
+                }
+                i++;
+            }
+            document.getElementById("ketQua").innerText = `Tổng các phần tử: ${sum}`;
+        };
+
+        document.getElementById("btnTimMax").onclick = function() {
+            if (matrix.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let max = matrix[0][0];
+            let position = "0,0";
+            let i = 0;
+            while (i < matrix.length) {
+                let j = 0;
+                while (j < matrix[i].length) {
+                    if (matrix[i][j] > max) {
+                        max = matrix[i][j];
+                        position = `${i},${j}`;
+                    }
+                    j++;
+                }
+                i++;
+            }
+            document.getElementById("ketQua").innerText = `Phần tử lớn nhất: ${max} (Vị trí: ${position})`;
+        };
+
+        document.getElementById("btnTrungBinh").onclick = function() {
+            let rowIndex = parseInt(document.getElementById("rowIndex").value);
+            if (rowIndex < 0 || rowIndex >= matrix.length) {
+                document.getElementById("ketQua").innerText = "Hàng không hợp lệ!";
+                return;
+            }
+            let sum = 0, count = matrix[rowIndex].length;
+            let j = 0;
+            while (j < count) {
+                sum += matrix[rowIndex][j];
+                j++;
+            }
+            let avg = count > 0 ? (sum / count).toFixed(2) : "Không có phần tử";
+            document.getElementById("ketQua").innerText = `Trung bình cộng hàng ${rowIndex}: ${avg}`;
+        };
+
+        document.getElementById("btnDaoNguoc").onclick = function() {
+            if (matrix.length === 0) {
+                document.getElementById("ketQua").innerText = "Mảng rỗng!";
+                return;
+            }
+            let newMatrix = [];
+            let i = matrix.length - 1;
+            while (i >= 0) {
+                newMatrix.push(matrix[i]);
+                i--;
+            }
+            matrix = newMatrix;
+            document.getElementById("ketQua").innerText = "Mảng sau khi đảo ngược hàng!";
+        };
+
+        document.getElementById("btnThoat").onclick = function() {
+            document.getElementById("ketQua").innerText = "Chương trình đã kết thúc.";
+            alert("Chương trình đã kết thúc.");
+        };
+    </script>
+
+</body>
+</html>

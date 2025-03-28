@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt1</title>
+</head>
+<body>
+    <button onclick="nhapMang()">1. Nhập mảng</button>
+    <button onclick="hienThiMang()">2. Hiển thị mảng</button>
+    <button onclick="timMinMax()">3. Tìm phần tử lớn nhất và nhỏ nhất</button>
+    <button onclick="tinhTong()">4. Tính tổng các phần tử</button>
+    <button onclick="demSoLanXuatHien()">5. Tìm số lần xuất hiện của một phần tử</button>
+    <button onclick="sapXepTangDan()">6. Sắp xếp mảng tăng dần</button>
+    <button onclick="thoatChuongTrinh()">7. Thoát chương trình</button>
+
+    <h3>Kết quả:</h3>
+    <p id="ketQua">Chưa có dữ liệu.</p>
+
+    <script>
+        let arr = []; 
+        function nhapMang() {
+            let input = prompt("Nhập các số nguyên cách nhau bằng dấu phẩy (,):");
+            if (input !== null && input.trim() !== "") {
+                arr = input.split(",").map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+                document.getElementById("ketQua").innerText = "Mảng đã nhập: " + arr.join(", ");
+            } else {
+                alert("Dữ liệu không hợp lệ!");
+            }
+        }
+
+        function hienThiMang() {
+            if (arr.length > 0) {
+                document.getElementById("ketQua").innerText = "Mảng hiện tại: " + arr.join(", ");
+            } else {
+                alert("Mảng chưa có dữ liệu! Vui lòng nhập mảng trước.");
+            }
+        }
+
+        function timMinMax() {
+            if (arr.length > 0) {
+                let max = Math.max(...arr);
+                let min = Math.min(...arr);
+                document.getElementById("ketQua").innerText = `Số lớn nhất: ${max}, Số nhỏ nhất: ${min}`;
+            } else {
+                alert("Mảng chưa có dữ liệu!");
+            }
+        }
+
+        function tinhTong() {
+            if (arr.length > 0) {
+                let sum = arr.reduce((acc, num) => acc + num, 0);
+                document.getElementById("ketQua").innerText = `Tổng các phần tử: ${sum}`;
+            } else {
+                alert("Mảng chưa có dữ liệu!");
+            }
+        }
+
+        function demSoLanXuatHien() {
+            if (arr.length > 0) {
+                let num = parseInt(prompt("Nhập số cần tìm trong mảng:"));
+                if (!isNaN(num)) {
+                    let count = arr.filter(value => value === num).length;
+                    document.getElementById("ketQua").innerText = `Số ${num} xuất hiện ${count} lần trong mảng.`;
+                } else {
+                    alert("Vui lòng nhập số hợp lệ!");
+                }
+            } else {
+                alert("Mảng chưa có dữ liệu!");
+            }
+        }
+
+        function sapXepTangDan() {
+            if (arr.length > 0) {
+                arr.sort((a, b) => a - b);
+                document.getElementById("ketQua").innerText = "Mảng sau khi sắp xếp: " + arr.join(", ");
+            } else {
+                alert("Mảng chưa có dữ liệu!");
+            }
+        }
+
+        function thoatChuongTrinh() {
+            let confirmExit = confirm("Bạn có chắc chắn muốn thoát không?");
+            if (confirmExit) {
+                document.getElementById("ketQua").innerText = "Chương trình đã kết thúc.";
+                arr = []; 
+            }
+        }
+    </script>
+
+</body>
+</html>
