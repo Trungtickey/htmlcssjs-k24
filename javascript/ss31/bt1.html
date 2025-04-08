@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text {
+          font-size: 30px;
+          margin-bottom: 20px;
+        }
+        button {
+          padding: 10px 20px;
+          font-size: 20px;
+          margin: 0 10px;
+          border-radius: 8px;
+          border: 2px solid gray;
+          background-color: #e0e0e0;
+        }
+      </style>
+</head>
+<body>
+    <div class="text">This is a text</div>
+
+  <button id="hideBtn">Hide text</button>
+  <button id="showBtn">Show text</button>
+
+  <script>
+    const textElement = document.getElementById('text');
+    const hideButton = document.getElementById('hideBtn');
+    const showButton = document.getElementById('showBtn');
+
+    hideButton.addEventListener('click', function () {
+      textElement.style.display = 'none';
+    });
+
+    showButton.addEventListener('click', function () {
+      textElement.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

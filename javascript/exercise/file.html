@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách công việc</h1>
+        <div class="input-container">
+            <input type="text">
+            <button>Thêm</button>
+        </div>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span class="task-text">Quét nhà</span>
+                <div class="delete-btn"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></div>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span class="task-text completed"><s>Giặt quần áo</s></span>
+                <div class="delete-btn"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></div>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span class="task-text">Học lập trình</span>
+                <div class="delete-btn"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></div>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span class="task-text completed"><s>Nấu ăn</s></span>
+                <div class="delete-btn"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></div>
+            </li>
+        </ul>
+        <div class="progress">
+            Tiến độ hoàn thành: <span id="progressPercentage">50%</span>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
