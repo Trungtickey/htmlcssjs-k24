@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bt4</title>
+  </head>
+  <body>
+    <input type="text" id="email" />
+    <p id="ketQua"></p>
+    <button onclick="checkEmail()">check</button>
+  </body>
+  <script>
+    function checkEmail() {
+      let inp = document.getElementById("email");
+      let ketQua = document.getElementById("ketQua");
+      let email = inp.value.trim();
+      const regex = /^[^\s@]+@[^\s@]+\.(com|vn)$/;
+
+      if (regex.test(email)) {
+        ketQua.textContent = "Email hợp lệ";
+        ketQua.style.color = "green";
+      } else {
+        ketQua.textContent = "Email không hợp lệ hoặc không đúng định dạng";
+        ketQua.style.color = "red";
+      }
+    }
+  </script>
+</html>
