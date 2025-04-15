@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-list</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #f1f1f1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+    
+        .todo-container {
+          background: #fff;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          width: 400px;
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 12px;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+        }
+    
+        button {
+          padding: 10px 20px;
+          background: #28a745;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+    
+        button:hover {
+          background: #218838;
+        }
+    
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+    
+        li {
+          padding: 10px;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+    
+        .delete-btn {
+          background: #dc3545;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+    
+        .delete-btn:hover {
+          background: #c82333;
+        }
+      </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>Todo List</h2>
+        <input type="text" id="taskInput" placeholder="Thêm việc cần làm...">
+        <button onclick="addTask()">Thêm</button>
+        <ul id="taskList"></ul>
+      </div>
+      <script>
+        let tasks = [];
+    // Load tasks from localStorage
+        window.onload = function() {
+          const saved = localStorage.getItem("todoTasks");
+          if (saved) {
+            tasks = JSON.parse(saved);
+            renderTasks();
+          }
+        };
+    
+        function saveToLocalStorage() {
+          localStorage.setItem("todoTasks", JSON.stringify(tasks));
+        }
+    
+        function renderTasks() {
+          const list = document.getElementById("taskList");
+          list.innerHTML = "";
+          tasks.forEach((task, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+              ${task}
+              <button class="delete-btn" onclick="deleteTask(${index})">Xóa</button>
+            `;
+            list.appendChild(li);
+          });
+        }
+    
+        function addTask() {
+          const input = document.getElementById("taskInput");
+          const value = input.value.trim();
+          if (value) {
+            tasks.push(value);
+            input.value = "";
+            saveToLocalStorage();
+            renderTasks();
+          }
+        }
+    
+        function deleteTask(index) {
+          tasks.splice(index, 1);
+          saveToLocalStorage();
+          renderTasks();
+        }
+      </script>
+</body>
+</html>

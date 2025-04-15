@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form đăng ký</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #f1f1f1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+    
+        .form-container {
+          background: #fff;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          width: 400px;
+        }
+    
+        .form-container h2 {
+          text-align: center;
+          margin-bottom: 25px;
+        }
+    
+        .form-container label {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: bold;
+        }
+    
+        .form-container input {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 16px;
+        }
+    
+        .form-container button {
+          width: 100%;
+          padding: 12px;
+          background-color: #007bff;
+          color: white;
+          font-size: 18px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+    
+        .form-container button:hover {
+          background-color: #0056b3;
+        }
+    
+        .error {
+          color: red;
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+    
+        .success {
+          color: green;
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+      </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register</h2>
+    <div id="message"></div>
+    <form id="registerForm">
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter your email address" required>
+
+      <label>Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <label>Confirm Password:</label>
+      <input type="password" id="confirmPassword" placeholder="Enter your confirm password" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      message.innerHTML = '';
+      if (!email || !password || !confirmPassword) {
+        message.innerHTML = 'Yêu câu nhập đầy đủ thông tin.';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        message.innerHTML = 'Mật khẩu không khớp.';
+        return;
+      }
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const emailExists = users.some(user => user.email === email);
+      if (emailExists) {
+        message.innerHTML = 'Email đã tồn tại.';
+        return;
+      }
+
+      users.push({ email, password });
+      localStorage.setItem('users', JSON.stringify(users));
+
+      message.innerHTML = 'Đăng ký thành công!';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

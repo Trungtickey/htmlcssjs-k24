@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .form-container input {
+            padding: 5px;
+            flex: 1;
+        }
+        .form-container button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách nhân viên Rikkei</h1>
+    
+    <div class="form-container">
+        <label for="employeeName">tên nhân viên</label>
+        <input type="text" id="employeeName">
+        
+        <label for="employeePosition">chức vụ</label>
+        <input type="text" id="employeePosition">
+        
+        <button id="addEmployeeBtn">thêm nhân viên</button>
+    </div>
+    
+    <div id="errorMessage" class="error"></div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức vụ</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+        </tbody>
+    </table>
+</body>
+</html>
