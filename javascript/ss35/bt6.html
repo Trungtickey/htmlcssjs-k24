@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên Rikkei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+          }
+          
+          h1 {
+            text-align: center;
+            color: #333;
+          }
+          
+          select, input[type="text"] {
+            padding: 8px;
+            margin: 10px 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+          }
+          
+          button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            background-color: #0056b3;
+          }
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+          }
+          
+          th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+          }
+          
+          th {
+            background-color: #f0f4f8;
+            color: #333;
+            font-weight: bold;
+          }
+          
+          tr:hover {
+            background-color: #f9fbfd;
+          }
+          
+          .status-active {
+            color: #12b76a;
+            background-color: #d1fadf;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+          }
+          
+          .status-inactive {
+            color: #f04438;
+            background-color: #fee4e2;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+          }
+          
+          .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 5px;
+          }
+          
+          .icon-btn.delete {
+            color: red;
+          }
+          
+          .icon-btn.edit {
+            color: orange;
+          }
+    </style>
+</head>
+<body>
+    <select id="status-filter">
+        <option value="all">Tất cả</option>
+        <option value="active">Đang hoạt động</option>
+        <option value="inactive">Ngừng hoạt động</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody id="category-list"></tbody>
+    </table>
+    <script src="./bt6.js"></script>
+</body>
+</html>
