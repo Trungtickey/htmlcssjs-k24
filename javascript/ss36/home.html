@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-container">
+            <h1 id="welcomeMessage">Xin chào, <span id="username"></span>! 👋</h1>
+            <p>Chào mừng bạn đến với hệ thống mini!</p>
+            <button id="logoutBtn" class="btn-primary">Đăng xuất</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn');
+            const currentUser = localStorage.getItem('currentUser');
+            
+            if (isLoggedIn !== 'true' || !currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+            document.getElementById('username').textContent = currentUser;
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                localStorage.removeItem('isLoggedIn');
+                sessionStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('currentUser');
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>
