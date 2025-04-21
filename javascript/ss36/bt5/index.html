@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý công việc (Task Board)</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clipboard-list"></i> Quản lý công việc (Task Board)</h1>
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Nhập tên công việc..." required>
+                <button type="submit" id="add-button">Thêm</button>
+            </form>
+        </header>
+
+        <main class="board">
+            <div class="column">
+                <h2><i class="far fa-clock"></i> Chờ xử lý</h2>
+                <div class="tasks" id="waiting-tasks"></div>
+            </div>
+
+            <div class="column">
+                <h2><i class="fas fa-spinner"></i> Đang làm</h2>
+                <div class="tasks" id="in-progress-tasks"></div>
+            </div>
+
+            <div class="column">
+                <h2><i class="fas fa-check-circle"></i> Hoàn thành</h2>
+                <div class="tasks" id="completed-tasks"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

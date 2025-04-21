@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống đánh giá sản phẩm</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="product">
+        <h2>Sản phẩm: Loa Bluetooth</h2>
+        <img
+          src="https://i.pinimg.com/736x/a2/0f/92/a20f92a8dd6028fbbc84446e8d190fd9.jpg"
+          alt=""
+        />
+        <p>Đánh giá sản phẩm:</p>
+        <div id="rating">
+          <span class="stars" data-value="1">★</span>
+          <span class="stars" data-value="2">★</span>
+          <span class="stars" data-value="3">★</span>
+          <span class="stars" data-value="4">★</span>
+          <span class="stars" data-value="5">★</span>
+        </div>
+        <p id="selected-rating">Bạn chưa đánh giá.</p>
+
+        <div class="comment-section">
+          <h3>Bình luận</h3>
+          <textarea id="comment-input" class="comment-box" placeholder="Nhập bình luận..."></textarea>
+          <button onclick="submitReview()">Gửi</button>
+          <ul id="comment-list" class="comment-list"></ul>
+        </div>
+      </div>
+</body>
+</html>
